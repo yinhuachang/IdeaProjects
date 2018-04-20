@@ -1,0 +1,31 @@
+#配置端口号，接口访问前缀，静态资源访问前缀
+server:
+  port: 8081
+  servlet-path: /flower-sing
+#  context-path: /flower-sing
+
+#区分环境配置 dev || production
+spring:
+  profiles:
+    active: dev
+  #配置编码
+  http:
+    encoding:
+      enabled: true
+      force: true
+      charset: UTF-8
+
+#thymelea模板配置
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML5
+    encoding: UTF-8
+    content-type: text/html
+    cache: false
+  resources:
+    chain:
+      strategy:
+        content:
+          enabled: true
+          paths: /**

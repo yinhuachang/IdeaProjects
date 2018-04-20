@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" >
+<header>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>FLOWER-SING LOGIN</title>
+        <!--jquery-->
+        <script th:src="@{jquery/jquery.min.js}"></script>
+
+        <!--Bootstrap-->
+        <script th:src="@{bootstrap/js/bootstrap.min.js}"></script>
+        <link th:href="@{bootstrap/css/bootstrap.min.css}" rel="stylesheet" />
+
+        <link th:href="@{other/animate.min.css}" rel="stylesheet" />
+        <style>
+            body{
+                margin-left:auto;
+                margin-right:auto;
+                margin-TOP:300PX;
+                background-color: #b2dba1;
+                width:20em;
+            }
+
+        </style>
+    </header>
+    <body>
+            <div class="animated animated lightSpeedIn col-center-block col-md-offset-4">
+                <h3>LOGIN</h3>
+            </div>
+            <form  th:action="@{loginValid}"   th:method="post" th:object="${user}">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon">@</span>
+                    <input id="userName" type="text" class="form-control" placeholder="用户名"  th:value="yangmin" th:field="*{userName}"  aria-describedby="basic-addon1"/>
+                </div>
+                <br/>
+                <!--下面是密码输入框-->
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">@</span>
+                    <input id="passWord" type="password" class="form-control" placeholder="密码"     aria-describedby="basic-addon1"/>
+                </div>
+                <br/>
+                <!--下面是登陆按钮,包括颜色控制-->
+                <button type="submit" style="width:280px;" class="btn btn-info">登 录</button>
+            </form>
+            <br/>
+            <br/>
+            <div class = "animated bounceInLeft" style="font-size: 19px;">
+                © 2018 音花唱|music flower sing
+            </div>
+    </body>
+</html>
